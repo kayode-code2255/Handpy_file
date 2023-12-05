@@ -1,0 +1,61 @@
+def read_file(file_name):
+    try:
+        with open(file_name, 'r') as file:
+            content = file.read()
+            return content
+    except FileNotFoundError:
+        return "File not found"
+
+file_content = read_file('president.csv')
+print(file_content)
+
+def read_first_n_lines(file_name, n):
+    try:
+        with open(file_name, 'r') as file:
+            lines = file.readlines()
+            return ''.join(lines[:n])
+    except FileNotFoundError:
+        return "File not found"
+
+first_n_lines = read_first_n_lines('president.csv', 2)
+print(first_n_lines)
+
+def read_last_n_lines(file_name, n):
+    try:
+        with open(file_name, 'r') as file:
+            lines = file.readlines()
+            return ''.join(lines[-n:])
+    except FileNotFoundError:
+        return "File not found"
+
+last_n_lines = read_last_n_lines('president.csv', 3)  
+print(last_n_lines)
+
+def count_words(file_name):
+    try:
+        with open(file_name, 'r') as file:
+            content = file.read()
+            words = content.split()
+            return len(words)
+    except FileNotFoundError:
+        return "File not found"
+
+word_count = count_words('president.csv')
+print(f"Number of words in the file: {word_count}")
+
+def read_last_n_lines_bonus(file_name, n):
+    try:
+        with open(file_name, 'r') as file:
+            lines = file.readlines()
+            return ''.join(lines[-n:])
+    except FileNotFoundError:
+        return "File not found"
+
+last_n_lines_bonus = read_last_n_lines_bonus('president.csv', 2) 
+print(last_n_lines_bonus)
+
+
+
+
+
+
